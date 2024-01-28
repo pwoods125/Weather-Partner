@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Weather Partner</title>
+</head>
+<body>
+    <section>
+        <header> 
+            <h1>Weather Partner</h1>
+        </header>
+    </section>
+    <section>
+        <div class="card">
+            <h2 class="card-header Search">Search for a City:</h2>
+            <form id="user-search-form" class="card-body">
+              <input name="cityname" id="cityname" type="text" class="form-input" />
+              <button type="search" class="btn">Search</button>
+            </form>
+        </div>
+    </section>
+    <section>
+        <div class="card">
+            <h2 class="card-header SearchHistory">Search History</h2>
+            <div id="previous-cities-buttons" class="btngrid hide">
+              <button data-searched="1" class="btn"></button>
+              <button data-searched="2" class="btn"></button>
+              <button data-searched="3" class="btn"></button>
+            </div>
+          </div>
+    </section>
+    <section>
+        <div class="col-12 col-md-8">
+            <h3 class="searchedforcast"><span id="cityname-searched"></span></h3>
+            <div id="dailyforecast-container" class="show-city-results"></div>
+        </div>
+        <div class="col-12 col-md-8">
+            <div id="fivedayForecast-container" class="show-city-results"></div>
+        </div>
+
+    </section>
+
+    <script
+    src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+    crossorigin="anonymous"
+  ></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
