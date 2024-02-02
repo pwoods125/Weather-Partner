@@ -13,12 +13,12 @@ var searchBtnEl = document.getElementById("searchbtn");
 
 var citynameEl = document.getElementById("cityname");
 var city = document.querySelector(".city");
-var dateEl = document.querySelector(".date");
-var temp = document.querySelector(".temp");
-var forecast = document.querySelector(".forecast");
-var icon = document.querySelector(".icon");
-var humidity = document.querySelector(".humidity");
-var windspeed = document.querySelector(".windspeed");
+var dateEl = document.getElementsByClassName("date");
+var temp = document.getElementsByClassName("temp");
+var forecast = document.getElementsByClassName("forecast");
+var icon = document.getElementsByClassName("icon");
+var humidity = document.getElementsByClassName("humidity");
+var windspeed = document.getElementsByClassName("windspeed");
 
 // WHEN I search for a city
 // THEN I am presented with current and future conditions for that city
@@ -36,15 +36,18 @@ function getWeather(x){
             return response.json();
         }).then(function(data){
             city.textContent = data.city.name
-            var days = data.list
-            $.each($('.weather-container'), function(i, container) { 
-              container.child.val(days[i].dt_txt)
-              dateEl.textContent = days[i].dt_txt
-              temp.textContent = days[i].main.temp
-              forecast.textContent = days[i].weather[0].main
-              icon.src = "http://openweathermap.org/img/wn/" + days[i].weather[0].icon + ".png"
-              humidity.textContent = days[i].main.humidity + "%"
-              windspeed.textContent = days[i].wind.speed
+            var days = data.list;
+            console.log(days)
+            var timeframe = 8;
+            var newDay = 1;
+            $.each($('.weather-container'), function(i, container) {
+              newDay = i * timeframe; 
+              dateEl[i].textContent = days[newDay].dt_txt
+              temp[i].textContent = days[newDay].main.temp
+              forecast[i].textContent = days[newDay].weather[0].main
+              icon[i].src = "http://openweathermap.org/img/wn/" + days[newDay].weather[0].icon + ".png"
+              humidity[i].textContent = days[newDay].main.humidity + "%"
+              windspeed[i].textContent = days[newDay].wind.speed
           });
           //   $('.weather-container').each(function() {
           //     var i = 0
