@@ -1,9 +1,3 @@
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
 header {
     border-style: solid;
     padding: 20px;
@@ -14,6 +8,7 @@ header {
 
 .card {
     border-style: solid;
+    display: flex;
     max-width: 30%;
     padding: 20px;
     margin: 25px;
@@ -28,11 +23,15 @@ input {
     overflow-wrap: normal;
 }
 
-.btngrid {
-    display: grid;
-    gap: 10px;
-    margin: 20px 20px;
+
+.weather-container {
+    border-style: solid;
+    display: inline-grid;
+    text-align: center;
     flex-wrap: wrap;
+    margin: 20px;
+    padding: 20px;
+
 }
 
 .hide {
