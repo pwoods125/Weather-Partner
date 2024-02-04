@@ -1,20 +1,38 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(rgb(57, 119, 220), rgb(160, 196, 253), rgb(57, 119, 220));
+    background-position: center center;
+    background-repeat:  no-repeat;
+    background-attachment: fixed;
+    background-size:  cover;
+    background-color: #999;
+}
+
 header {
     border-style: solid;
     padding: 20px;
     margin: 25px;
     position: auto;
     text-align: center;
+    background-color: #0c006b;
+    color: antiquewhite;
 }
 
 .card {
     border-style: solid;
-    display: flex;
+    display: inline-flex;
     max-width: 30%;
     padding: 20px;
     margin: 25px;
-    position: left;
-    text-align: justify;
+    position: center;
+    text-align: center;
     flex-wrap: wrap;
+    background-color: #94cffd;
 }
 
 input {
@@ -27,15 +45,21 @@ input {
 .weather-container {
     border-style: solid;
     display: inline-grid;
+    float: center;
     text-align: center;
     flex-wrap: wrap;
     margin: 20px;
     padding: 20px;
-
+    background-color: #94cffd;
 }
 
-.hide {
-    display: none;
+button {
+    background-color: rgb(2, 142, 188);
+    border-radius: 2px;
+    box-shadow: 2px;
+    margin: 10px;
+    font-family: Agency FB, Arial Rounded MT Bold, Copperplate Gothic Bold, Engravers MT;
+    font-size: xx-large;
 }
 
 @media screen and (max-width: 780px) {
